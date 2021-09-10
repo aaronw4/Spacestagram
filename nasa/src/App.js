@@ -31,10 +31,21 @@ function App() {
     setDate(digit);
   }
 
+  function handleClick() {
+    setNasaData({
+      ...nasaData, 
+      [date]: {...nasaData[date], 'like': !nasaData[date]['like']
+      }
+    })
+  }
+
   return (
     <div className="App">
       <nasaContext.Provider value={nasaData}>
-        <NasaCard date={date}/>
+        <NasaCard 
+          date={date}
+          handleClick={handleClick}
+        />
       </nasaContext.Provider>
     </div>
   );
