@@ -6,6 +6,7 @@ import { faHeart as regular} from '@fortawesome/free-regular-svg-icons';
 
 const NasaCard = (props) => {
     let photoData = useContext(nasaContext)
+
     return (
         <div>
             {!(props.date in photoData) ? 
@@ -22,7 +23,12 @@ const NasaCard = (props) => {
                     <a href={photoData[props.date]['hdurl']} target="_blank">
                         <img className='image' src={photoData[props.date]['url']}/>
                     </a>
-                    <FontAwesomeIcon icon={regular} size="2x" className='font'/>
+                    <button onClick={props.handleClick}>
+                        {photoData[props.date]['like'] === false ? 
+                            <FontAwesomeIcon icon={regular} size="3x" color='white'/> : 
+                            <FontAwesomeIcon icon={solid} size="3x" color='red'/>                        
+                        }
+                    </button>
                     <p className='explanation'>{photoData[props.date]['explanation']}</p>
                 </div>
             }
