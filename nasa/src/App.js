@@ -12,8 +12,9 @@ function App() {
   useEffect(() => {
     async function fetchData() {
         try {
-            const data = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=C8iZhiozIUVg3WRcic20xpp11Z2q9TtkPfWk1aB9&date=${date}`);
-            setNasaData({...nasaData, [date]: data.data});
+            const nasa = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=C8iZhiozIUVg3WRcic20xpp11Z2q9TtkPfWk1aB9&date=${date}`);
+            nasa['data']['like'] = false
+            setNasaData({...nasaData, [date]: nasa.data});
         }
         catch(err) {
             console.log(err);
