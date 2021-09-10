@@ -1,3 +1,27 @@
 .App {
   text-align: center;
 }
+header {
+  background-image: url("https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/starfield-banner.jpg");
+}
+.title {
+  margin-bottom: 0;
+}
+.date {
+  margin-top: 0;
+}
+.symbol {
+  position: absolute;
+  top: 5px;
+  left: 50px;
+}
+.image {
+  height: 60vh;
+  width: auto;
+}
+.explanation {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 18px;
+}
