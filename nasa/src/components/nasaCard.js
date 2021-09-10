@@ -4,9 +4,14 @@ import { nasaContext } from '../context/nasaContext';
 const NasaCard = (props) => {
     let photoData = useContext(nasaContext)
     console.log(photoData)
+    
     return (
         <div>
-            <img src={photoData[props.date]['url']}/>
+            {!(props.date in photoData) ? 
+                <div>Loading</div>
+                :
+                <img src={photoData[props.date]['url']}/>
+            }
         </div>
     )
 }
