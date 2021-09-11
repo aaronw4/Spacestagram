@@ -10,7 +10,7 @@ const NasaCard = (props) => {
     return (
         <div>
             {!(props.date in photoData) ? 
-                <div>Loading</div>
+                <div className='loading'>Loading...</div>
                 :
                 <div>
                     <header>
@@ -26,7 +26,7 @@ const NasaCard = (props) => {
                     <button onClick={props.handleClick}>
                         {photoData[props.date]['like'] === false ? 
                             <FontAwesomeIcon icon={regular} size="3x" color='white'/> : 
-                            <FontAwesomeIcon icon={solid} size="3x" color='red'/>                        
+                            <FontAwesomeIcon icon={solid} size="3x" color='blue'/>                        
                         }
                     </button>
                     <p className='explanation'>{photoData[props.date]['explanation']}</p>
