@@ -45,6 +45,7 @@ function App() {
         <NasaCard 
           date={date}
           handleClick={handleClick}
+          changeDate={changeDate}
         />
       </nasaContext.Provider>
     </div>
