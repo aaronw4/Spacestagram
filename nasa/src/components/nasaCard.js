@@ -3,6 +3,7 @@ import { nasaContext } from '../context/nasaContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as solid} from '@fortawesome/free-solid-svg-icons';
 import { faHeart as regular} from '@fortawesome/free-regular-svg-icons';
+import { DateBotton } from './dateButton';
 
 const NasaCard = (props) => {
     let photoData = useContext(nasaContext)
@@ -23,12 +24,16 @@ const NasaCard = (props) => {
                     <a href={photoData[props.date]['hdurl']} target="_blank">
                         <img className='image' src={photoData[props.date]['url']}/>
                     </a>
-                    <button onClick={props.handleClick}>
+                    <button onClick={props.handleClick} className='likeButton'>
                         {photoData[props.date]['like'] === false ? 
                             <FontAwesomeIcon icon={regular} size="3x" color='white'/> : 
                             <FontAwesomeIcon icon={solid} size="3x" color='blue'/>                        
                         }
                     </button>
+                    <DateBotton
+                        date={props.date}
+                        changeDate={props.changeDate}
+                    />
                     <p className='explanation'>{photoData[props.date]['explanation']}</p>
                 </div>
             }
