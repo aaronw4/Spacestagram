@@ -24,6 +24,11 @@ header {
   width: auto;
   margin-left: 60px;  
 }
+.video {
+  display: inline-block;
+  margin-right: auto;
+  margin-left: auto;
+}
 .likeButton {
   background-color: black;
   border: none;
