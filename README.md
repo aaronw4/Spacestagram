@@ -6,7 +6,7 @@ This site uses photos and information from NASA's Astronomy Photo of the Day (ht
 This project demonstrates:
 * Using Github for version control
 * Using the front-end framework __React__.
-* Using a JavaScript Library (__moment__).
+* Using a JavaScript Library (__moment__, __React Player__).
 * Fetching data from an API.
 * A loading page while data is being retrieved.
 * Storing retrieved data in state then displaying it. 
